@@ -30,7 +30,7 @@ router.post('/forgot-password', async (req, res) => {
         from: process.env.EMAIL_USER,
         to: user.email,
         subject: "Password Reset Request",
-        html: `<p>Click <a href="http://localhost:5173/reset-password/${token}">here</a> to reset your password.</p>`
+        html: `<p>Click <a href="${process.env.FRONTEND_URL}/reset-password/${token}">here</a> to reset your password.</p>`
     };
 
     try {
